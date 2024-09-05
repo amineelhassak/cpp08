@@ -17,3 +17,8 @@ Containers templates
 - **Insertion/Suppression au milieu** : Efficacité d'ajout ou de suppression d'éléments au milieu du conteneur.
 - **Complexité d'accès** : Temps nécessaire pour accéder à un élément par son indice.
 - **Complexité d'insertion/suppression** : Temps nécessaire pour ajouter ou supprimer un élément (en fonction de la position).
+
+
+La classe std::stack de la bibliothèque standard C++ est une adaptation conteneur, ce qui signifie qu'elle est construite sur un autre conteneur sous-jacent (comme un std::vector, std::deque, ou std::list) pour fournir une interface de pile (LIFO - Last In, First Out).
+
+container adapter

@@ -27,7 +27,6 @@ int main()
 
     std::cout << "+++++++++++++++++++++++++++++++++ Sequence container ++++++++++++++++++++++++++++++++++++\n";
     std::cout << "########################## test vector ####################" << std::endl;
-    
 
     try
     {
@@ -285,6 +284,7 @@ int main()
         std::forward_list<int>::iterator it = fl.begin();
         it = next(it,2);
         fl.erase_after(it);
+        // fl.remove_if([](int id){return (id < 0);});// v c++ 17
         // fl.emplace_front(0);
         std::cout << "befor_behin is : " << *fl.before_begin() << std::endl;
         std::copy(fl.begin(), fl.end(), std::ostream_iterator<int>(std::cout, "   "));
