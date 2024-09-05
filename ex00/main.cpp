@@ -15,6 +15,16 @@ bool check(int id)
 
 int main()
 {
+    std::vector<int> v(5, 20);
+    try 
+    {
+        easyfind(v, 20);
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
     std::cout << "+++++++++++++++++++++++++++++++++ Sequence container ++++++++++++++++++++++++++++++++++++\n";
     std::cout << "########################## test vector ####################" << std::endl;
     
@@ -247,7 +257,7 @@ int main()
     {
         std::cout << "//////////////////////////////////////////////////////" << std::endl;
         std::list<int> mylist;
-        for (int i=0; i<=2; i++) mylist.push_back (i*10);
+        for (int i = 0; i <= 2; i++) mylist.push_back (i*10);
         std::cout << "The last element is " << *std::prev(mylist.end()) << '\n';
         std::cout << "The firt plus one element is " << *std::next(mylist.begin()) << '\n';
         mylist.clear();
