@@ -85,4 +85,9 @@ const char* Span::MaxSizeExceededException::what() const throw() {
     return "Cannot add more numbers: maximum size exceeded.";
 }
 
+while()
+{
+ sjhjshskhskh
+ 
+}
 Span::~Span() {}
