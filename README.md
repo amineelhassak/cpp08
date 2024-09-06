@@ -22,3 +22,37 @@ Containers templates
 La classe std::stack de la bibliothèque standard C++ est une adaptation conteneur, ce qui signifie qu'elle est construite sur un autre conteneur sous-jacent (comme un std::vector, std::deque, ou std::list) pour fournir une interface de pile (LIFO - Last In, First Out).
 
 container adapter
+
+container_type dans std::stack est un alias de type qui représente le conteneur sous-jacent utilisé pour stocker les éléments de la pile. Ce conteneur peut être de n'importe quel type de conteneur de la bibliothèque standard C++ qui prend en charge les opérations nécessaires, telles que push_back, pop_back, et l'accès aux éléments par itérateur.
+
+#include <iostream>
+#include <stack>
+#include <vector>
+#include <deque>
+#include <list>
+c++```
+int main() {
+    // Utilisation de std::deque comme conteneur sous-jacent (par défaut)
+    std::stack<int> stackAvecDeque;
+
+    // Utilisation de std::vector comme conteneur sous-jacent
+    std::stack<int, std::vector<int>> stackAvecVector;
+
+    // Utilisation de std::list comme conteneur sous-jacent
+    std::stack<int, std::list<int>> stackAvecList;
+
+    // Ajouter des éléments
+    stackAvecDeque.push(10);
+    stackAvecVector.push(20);
+    stackAvecList.push(30);
+
+    // Afficher les éléments
+    std::cout << "Element au sommet (deque): " << stackAvecDeque.top() << std::endl; // Affiche : 10
+    std::cout << "Element au sommet (vector): " << stackAvecVector.top() << std::endl; // Affiche : 20
+    std::cout << "Element au sommet (list): " << stackAvecList.top() << std::endl; // Affiche : 30
+
+    return 0;
+}
+```
+
+typename est nécessaire pour indiquer que ce qui suit est un type, particulièrement dans les contextes de modèles (templates). Dans cet exemple, typename est utilisé pour informer le compilateur que std::stack<T>::container_type::iterator est un type, et non autre chose
